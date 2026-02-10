@@ -6,7 +6,7 @@ const meta = {
   component: TextRotator,
   tags: ["autodocs"],
   argTypes: {
-    interval: { control: { type: "number", min: 500, max: 5000, step: 100 } },
+    interval: { table: { disable: true } },
     className: { table: { disable: true } },
   },
 } satisfies Meta<typeof TextRotator>;
@@ -20,25 +20,5 @@ export const Default: Story = {
     words: ["websites", "apps", "experiences", "platforms"],
     after: "that matter.",
     className: "text-3xl font-bold",
-  },
-};
-
-export const FastCycle: Story = {
-  args: {
-    before: "Think",
-    words: ["bigger", "faster", "smarter", "bolder"],
-    after: ".",
-    interval: 1000,
-    className: "text-3xl font-bold",
-  },
-};
-
-export const SlowCycle: Story = {
-  args: {
-    before: "Our",
-    words: ["mission", "vision", "purpose"],
-    after: "drives us forward.",
-    interval: 4000,
-    className: "text-2xl font-semibold",
   },
 };

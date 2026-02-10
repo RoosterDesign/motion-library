@@ -4,7 +4,7 @@ import Image from "next/image";
 import React from "react";
 
 const meta = {
-  title: "Layout Blocks/Marquee",
+  title: "Content Blocks/Marquee",
   component: Marquee,
   tags: ["autodocs"],
   argTypes: {

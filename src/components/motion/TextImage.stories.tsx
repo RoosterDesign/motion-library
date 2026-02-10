@@ -4,7 +4,7 @@ import { MotionButton } from "./MotionButton";
 import React from "react";
 
 const meta = {
-  title: "Layout Blocks/TextImage",
+  title: "Content Blocks/TextImage",
   component: TextImage,
   tags: ["autodocs"],
   argTypes: {

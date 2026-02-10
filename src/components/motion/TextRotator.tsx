@@ -50,7 +50,7 @@ export function TextRotator({
             animate={{ y: 0, opacity: 1 }}
             exit={reduced ? undefined : { y: "-100%", opacity: 0 }}
             transition={{ duration, ease }}
-            className="inline-block text-red-600"
+            className="inline-block text-[#ff784a]"
           >
             {words[index]}
           </motion.span>

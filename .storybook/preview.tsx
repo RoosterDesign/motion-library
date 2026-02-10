@@ -6,9 +6,11 @@ import React, { useState, useCallback, useEffect } from "react";
 function AnimationReplay({
   children,
   args,
+  showButton = true,
 }: {
   children: React.ReactNode;
   args: Record<string, unknown>;
+  showButton?: boolean;
 }) {
   const [key, setKey] = useState(0);
 
@@ -25,7 +27,7 @@ function AnimationReplay({
   return (
     <>
       <div key={key}>{children}</div>
-      <button
+      {showButton && <button
         onClick={replay}
         style={{
           position: "fixed",
@@ -65,7 +67,7 @@ function AnimationReplay({
           <path d="M21 3v5h-5" />
         </svg>
         Replay
-      </button>
+      </button>}
     </>
   );
 }
@@ -85,13 +87,9 @@ const preview: Preview = {
       return (
         <MotionProvider>
           <div style={{ padding: "2rem" }}>
-            {showReplay ? (
-              <AnimationReplay args={context.args}>
-                <Story />
-              </AnimationReplay>
-            ) : (
+            <AnimationReplay args={context.args} showButton={showReplay}>
               <Story />
-            )}
+            </AnimationReplay>
           </div>
         </MotionProvider>
       );

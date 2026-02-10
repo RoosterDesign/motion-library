@@ -5,7 +5,7 @@ import { MotionButton } from "./MotionButton";
 import React from "react";
 
 const meta = {
-  title: "Layout Blocks/RevealGroup",
+  title: "Content Blocks/RevealGroup",
   component: RevealGroup,
   tags: ["autodocs"],
   argTypes: {

@@ -4,7 +4,7 @@ import Image from "next/image";
 import React from "react";
 
 const meta = {
-  title: "Layout Blocks/Stagger",
+  title: "Content Blocks/Stagger",
   component: Stagger,
   tags: ["autodocs"],
   argTypes: {
