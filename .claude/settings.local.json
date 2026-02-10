@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npx storybook@latest init:*)",
+      "Bash(where:*)",
+      "Bash(pnpm:*)",
+      "Bash(findstr:*)",
+      "Bash(for f in TextRotator.stories.tsx MotionButton.stories.tsx ImageReveal.stories.tsx BlurReveal.stories.tsx ParallaxImage.stories.tsx ScaleReveal.stories.tsx HoverCard.stories.tsx ExpandCards.stories.tsx Stagger.stories.tsx Marquee.stories.tsx)",
+      "Bash(done)",
+      "Bash(powershell -Command \"Get-ChildItem *.stories.tsx | ForEach-Object { \\(Get-Content $_FullName -Raw\\) -replace ''import \\(\\\\w+\\) from'', ''import { $1 } from'' | Set-Content $_FullName -NoNewline }\")",
+      "Bash(git remote set-url:*)"
+    ]
+  }
+}
