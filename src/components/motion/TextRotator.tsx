@@ -36,14 +36,12 @@ export function TextRotator({
   }, [words.length, resolvedInterval]);
 
   return (
-    <motion.span layout className={clsx("inline-flex flex-wrap items-baseline", className)}>
-      {before ? <motion.span layout>{before}&nbsp;</motion.span> : null}
+    <span className={clsx("inline-flex flex-wrap items-baseline", className)}>
+      {before ? <span>{before}&nbsp;</span> : null}
 
-      <motion.span
-        layout
+      <span
         className="relative inline-flex overflow-hidden"
         style={{ verticalAlign: "baseline" }}
-        transition={{ duration, ease }}
       >
         <AnimatePresence mode="wait" initial={false}>
           <motion.span
@@ -57,9 +55,9 @@ export function TextRotator({
             {words[index]}
           </motion.span>
         </AnimatePresence>
-      </motion.span>
+      </span>
 
-      {after ? <motion.span layout transition={{ duration, ease }}>&nbsp;{after}</motion.span> : null}
-    </motion.span>
+      {after ? <span>&nbsp;{after}</span> : null}
+    </span>
   );
 }
