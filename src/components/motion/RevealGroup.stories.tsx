@@ -9,8 +9,10 @@ const meta = {
   component: RevealGroup,
   tags: ["autodocs"],
   argTypes: {
-    stagger: { control: { type: "number", min: 50, max: 500, step: 25 } },
-    delay: { control: { type: "number", min: 0, max: 2, step: 0.1 } },
+    stagger: { control: { type: "number", min: 0.05, max: 0.5, step: 0.05 } },
+    delay: { table: { disable: true } },
+    children: { table: { disable: true } },
+    className: { table: { disable: true } },
   },
 } satisfies Meta<typeof RevealGroup>;
 
@@ -31,48 +33,9 @@ export const Default: Story = {
           </p>
         </Reveal>
         <Reveal role="body">
-          <MotionButton variant="standard">Take Action</MotionButton>
-        </Reveal>
-      </>
-    ),
-  },
-};
-
-export const FastStagger: Story = {
-  args: {
-    stagger: 50,
-    children: (
-      <>
-        <Reveal role="heading">
-          <h2 className="text-3xl font-bold">Quick Cascade</h2>
-        </Reveal>
-        <Reveal role="body">
-          <p className="mt-2 text-gray-600">First paragraph appears quickly.</p>
-        </Reveal>
-        <Reveal role="body">
-          <p className="text-gray-600">Second follows right after.</p>
-        </Reveal>
-        <Reveal role="body">
-          <p className="text-gray-600">Third completes the sequence.</p>
-        </Reveal>
-      </>
-    ),
-  },
-};
-
-export const WithDelay: Story = {
-  args: {
-    stagger: 150,
-    delay: 0.5,
-    children: (
-      <>
-        <Reveal role="heading">
-          <h2 className="text-2xl font-semibold">Delayed Start</h2>
-        </Reveal>
-        <Reveal role="body">
-          <p className="mt-2 text-gray-600">
-            This group waits 0.5s before starting the stagger sequence.
-          </p>
+          <div className="mt-4">
+            <MotionButton variant="standard">Take Action</MotionButton>
+          </div>
         </Reveal>
       </>
     ),

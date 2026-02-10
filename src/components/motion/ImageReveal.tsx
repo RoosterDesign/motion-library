@@ -33,7 +33,6 @@ type ImageRevealProps = {
   alt?: string;
   shape?: ImageRevealShape;
   bgColor?: string;
-  triggerOnLoad?: boolean;
   className?: string;
 };
 
@@ -42,7 +41,6 @@ export function ImageReveal({
   alt = "",
   shape,
   bgColor,
-  triggerOnLoad = false,
   className,
 }: ImageRevealProps) {
   const reduced = useReducedMotion();
@@ -61,7 +59,7 @@ export function ImageReveal({
     margin: "0px 0px -10% 0px",
   });
 
-  const shouldAnimate = triggerOnLoad || inView;
+  const shouldAnimate = inView;
 
   if (reduced) {
     return (
@@ -80,7 +78,7 @@ export function ImageReveal({
   return (
     <div
       ref={ref}
-      className={clsx("relative aspect-[16/10] overflow-hidden", className)}
+      className={clsx("relative aspect-16/10 overflow-hidden", className)}
       style={{ backgroundColor: resolvedBgColor }}
     >
       <motion.div

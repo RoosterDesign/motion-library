@@ -20,6 +20,13 @@ const meta = {
       ],
     },
     reversed: { control: "boolean" },
+    heading: { table: { disable: true } },
+    body: { table: { disable: true } },
+    footer: { table: { disable: true } },
+    className: { table: { disable: true } },
+  },
+  args: {
+    reversed: false,
   },
 } satisfies Meta<typeof TextImage>;
 
@@ -43,30 +50,20 @@ export const Reversed: Story = {
   },
 };
 
-export const RotateIn: Story = {
-  name: "Rotate In (Auto)",
-  args: {
-    heading: "Rotate Reveal",
-    body: "The image rotates in from its natural side — right images rotate from the right, left images from the left.",
-    imageUrl: "/demo/demo-3.jpg",
-    imageVariant: "auto",
-  },
-};
-
 export const SlideFromLeft: Story = {
+    args: {
+      heading: "Slide From Left",
+      body: "The image slides in from the left using the fadeLeft variant for a horizontal entrance.",
+      imageUrl: "/demo/demo-1.jpg",
+      imageVariant: "fadeLeft",
+    },
+  };
+
+export const SlideFromBelow: Story = {
   args: {
-    heading: "Slide From Left",
+    heading: "Slide From Below",
     body: "The image slides in from the left using the fadeLeft variant for a horizontal entrance.",
     imageUrl: "/demo/demo-1.jpg",
-    imageVariant: "fadeLeft",
-  },
-};
-
-export const WithFooter: Story = {
-  args: {
-    heading: "Call to Action",
-    body: "This block includes a footer slot, perfect for adding buttons or links below the text content.",
-    imageUrl: "/demo/demo-2.jpg",
-    footer: <MotionButton variant="standard">Learn More</MotionButton>,
+    imageVariant: "fadeUp",
   },
 };

@@ -2,14 +2,11 @@
 
 import Image from "next/image";
 import { motion, useReducedMotion } from "framer-motion";
-import { ReactNode } from "react";
-
 type HoverCardProps = {
   title: string;
   description: string;
   imageUrl: string;
   hoverStyle?: "zoom" | "zoomRotate" | "zoomOut";
-  footer?: ReactNode;
 };
 
 export function HoverCard({
@@ -17,7 +14,6 @@ export function HoverCard({
   description,
   imageUrl,
   hoverStyle = "zoom",
-  footer,
 }: HoverCardProps) {
   const reduced = useReducedMotion();
 
@@ -66,8 +62,6 @@ export function HoverCard({
       <div className="space-y-2 p-5">
         <div className="text-lg font-semibold text-black">{title}</div>
         <p className="text-sm text-gray-600">{description}</p>
-
-        {footer ? <div className="pt-2">{footer}</div> : null}
       </div>
     </motion.div>
   );

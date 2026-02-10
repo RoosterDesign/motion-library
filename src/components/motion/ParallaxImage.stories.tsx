@@ -6,8 +6,20 @@ const meta = {
   component: ParallaxImage,
   tags: ["autodocs"],
   argTypes: {
-    offset: { control: { type: "number", min: 0, max: 300, step: 10 } },
+    offset: { table: { disable: true } },
+    alt: { table: { disable: true } },
+    className: { table: { disable: true } },
   },
+  decorators: [
+    (Story) => (
+      <div style={{ height: "200vh", paddingTop: "100vh", position: "relative" }}>
+        <p style={{ position: "fixed", top: 16, left: "50%", transform: "translateX(-50%)", color: "#888", fontSize: 14 }}>
+          Scroll down to view effect
+        </p>
+        <Story />
+      </div>
+    ),
+  ],
 } satisfies Meta<typeof ParallaxImage>;
 
 export default meta;
@@ -15,23 +27,6 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   args: {
-    imageUrl: "/demo/demo-1.jpg",
-    alt: "Parallax image",
-  },
-};
-
-export const LargeOffset: Story = {
-  args: {
-    imageUrl: "/demo/demo-2.jpg",
-    alt: "Large parallax offset",
-    offset: 200,
-  },
-};
-
-export const SmallOffset: Story = {
-  args: {
-    imageUrl: "/demo/demo-3.jpg",
-    alt: "Small parallax offset",
-    offset: 40,
+    imageUrl: "/demo/demo-1.jpg"
   },
 };

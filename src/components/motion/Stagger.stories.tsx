@@ -1,15 +1,30 @@
 import type { Meta, StoryObj } from "@storybook/nextjs-vite";
 import { Stagger } from "./Stagger";
+import Image from "next/image";
 import React from "react";
 
 const meta = {
   title: "Layout Blocks/Stagger",
   component: Stagger,
   tags: ["autodocs"],
+  argTypes: {
+    className: { table: { disable: true } },
+    childRole: { table: { disable: true } },
+    children: { table: { disable: true } },
+  },
 } satisfies Meta<typeof Stagger>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
+
+const images = [
+  "/demo/demo-1.jpg",
+  "/demo/demo-2.jpg",
+  "/demo/demo-3.jpg",
+  "/demo/demo-1.jpg",
+  "/demo/demo-2.jpg",
+  "/demo/demo-3.jpg",
+];
 
 export const CardGrid: Story = {
   args: {
@@ -29,16 +44,19 @@ export const CardGrid: Story = {
   },
 };
 
-export const ListItems: Story = {
+export const ImageGrid: Story = {
   args: {
-    className: "flex flex-col gap-2",
-    childRole: "listItem",
-    children: ["Design", "Develop", "Deploy", "Iterate"].map((item) => (
-      <div
-        key={item}
-        className="rounded-md bg-gray-50 px-4 py-3 text-gray-700"
-      >
-        {item}
+    className: "grid grid-cols-3 gap-4",
+    childRole: "card",
+    children: images.map((src, i) => (
+      <div key={i} className="relative aspect-16/10 overflow-hidden rounded-lg">
+        <Image
+          src={src}
+          alt=""
+          fill
+          className="object-cover"
+          sizes="33vw"
+        />
       </div>
     )),
   },

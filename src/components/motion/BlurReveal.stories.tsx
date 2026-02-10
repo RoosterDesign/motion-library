@@ -6,8 +6,20 @@ const meta = {
   component: BlurReveal,
   tags: ["autodocs"],
   argTypes: {
-    blur: { control: { type: "number", min: 0, max: 50, step: 1 } },
+    blur: { table: { disable: true } },
+    alt: { table: { disable: true } },
+    className: { table: { disable: true } },
   },
+  decorators: [
+    (Story) => (
+      <div style={{ height: "200vh", paddingTop: "100vh", position: "relative" }}>
+        <p style={{ position: "fixed", top: 16, left: "50%", transform: "translateX(-50%)", color: "#888", fontSize: 14 }}>
+          Scroll down to view effect
+        </p>
+        <Story />
+      </div>
+    ),
+  ],
 } satisfies Meta<typeof BlurReveal>;
 
 export default meta;
@@ -16,22 +28,5 @@ type Story = StoryObj<typeof meta>;
 export const Default: Story = {
   args: {
     imageUrl: "/demo/demo-1.jpg",
-    alt: "Blur reveal image",
-  },
-};
-
-export const HeavyBlur: Story = {
-  args: {
-    imageUrl: "/demo/demo-2.jpg",
-    alt: "Heavy blur reveal",
-    blur: 40,
-  },
-};
-
-export const SubtleBlur: Story = {
-  args: {
-    imageUrl: "/demo/demo-3.jpg",
-    alt: "Subtle blur reveal",
-    blur: 8,
   },
 };

@@ -7,6 +7,7 @@ const meta = {
   tags: ["autodocs"],
   argTypes: {
     interval: { control: { type: "number", min: 500, max: 5000, step: 100 } },
+    className: { table: { disable: true } },
   },
 } satisfies Meta<typeof TextRotator>;
 

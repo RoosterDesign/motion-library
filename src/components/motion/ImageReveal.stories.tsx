@@ -7,8 +7,9 @@ const meta = {
   tags: ["autodocs"],
   argTypes: {
     shape: { control: "select", options: ["circle", "diamond"] },
-    bgColor: { control: "color" },
-    triggerOnLoad: { control: "boolean" },
+    alt: { table: { disable: true } },
+    className: { table: { disable: true } },
+    bgColor: { table: { disable: true } },
   },
 } satisfies Meta<typeof ImageReveal>;
 
@@ -18,27 +19,13 @@ type Story = StoryObj<typeof meta>;
 export const CircleMask: Story = {
   args: {
     imageUrl: "/demo/demo-1.jpg",
-    alt: "Circle mask reveal",
     shape: "circle",
-    triggerOnLoad: true,
   },
 };
 
 export const DiamondMask: Story = {
   args: {
     imageUrl: "/demo/demo-2.jpg",
-    alt: "Diamond mask reveal",
     shape: "diamond",
-    triggerOnLoad: true,
-  },
-};
-
-export const CustomOverlay: Story = {
-  args: {
-    imageUrl: "/demo/demo-3.jpg",
-    alt: "Custom overlay color",
-    shape: "circle",
-    bgColor: "#1a1a2e",
-    triggerOnLoad: true,
   },
 };

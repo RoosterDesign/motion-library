@@ -41,17 +41,15 @@ export function ExpandCards({ items, className }: ExpandCardsProps) {
           onMouseEnter={() => setHovered(i)}
           onMouseLeave={() => setHovered(null)}
         >
-          <div className="absolute inset-y-0 left-1/2 w-screen -translate-x-1/2">
-            <Image
-              src={item.imageUrl}
-              alt={item.title}
-              fill
-              className="object-cover"
-              sizes="100vw"
-            />
-          </div>
+          <Image
+            src={item.imageUrl}
+            alt={item.title}
+            fill
+            className="object-cover"
+            sizes="50vw"
+          />
 
-          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/0 to-transparent" />
+          <div className="absolute inset-0 bg-linear-to-t from-black/60 via-black/0 to-transparent" />
 
           <div className="absolute inset-x-0 bottom-0 p-6 text-white">
             <div className="whitespace-nowrap text-xl font-semibold">

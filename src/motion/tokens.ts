@@ -47,7 +47,7 @@ export const motionTokens = {
         ease: "easeOut" as const,
       },
       // seconds between each child animating in
-      step: 0.1,
+      step: 0.15,
       // seconds to wait before the first child starts
       delayChildren: 0.0,
     },
@@ -57,7 +57,7 @@ export const motionTokens = {
     // (e.g. heading → body → button).
     revealGroup: {
       // seconds between each sequential reveal
-      step: 0.15,
+      step: 0.5,
       // seconds to wait before the first child starts
       delayChildren: 0.0,
     },

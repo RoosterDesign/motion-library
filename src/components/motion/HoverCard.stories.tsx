@@ -10,6 +10,8 @@ const meta = {
       control: "select",
       options: ["zoom", "zoomRotate", "zoomOut"],
     },
+    title: { table: { disable: true } },
+    description: { table: { disable: true } },
   },
   decorators: [
     (Story) => (
@@ -47,17 +49,5 @@ export const ZoomOut: Story = {
     description: "A winding trail through old-growth forest.",
     imageUrl: "/demo/demo-3.jpg",
     hoverStyle: "zoomOut",
-  },
-};
-
-export const WithFooter: Story = {
-  args: {
-    title: "Featured Project",
-    description: "Custom footer content below the card.",
-    imageUrl: "/demo/demo-1.jpg",
-    hoverStyle: "zoom",
-    footer: (
-      <span className="text-sm text-gray-400">Published Jan 2025</span>
-    ),
   },
 };

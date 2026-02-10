@@ -5,6 +5,9 @@ const meta = {
   title: "Cards/ExpandCards",
   component: ExpandCards,
   tags: ["autodocs"],
+  argTypes: {
+    className: { table: { disable: true } },
+  },
 } satisfies Meta<typeof ExpandCards>;
 
 export default meta;
@@ -22,21 +25,6 @@ export const Default: Story = {
         imageUrl: "/demo/demo-2.jpg",
         title: "Engineering",
         description: "Built with performance and scale in mind.",
-      },
-    ],
-  },
-};
-
-export const WithoutDescriptions: Story = {
-  args: {
-    items: [
-      {
-        imageUrl: "/demo/demo-2.jpg",
-        title: "Before",
-      },
-      {
-        imageUrl: "/demo/demo-3.jpg",
-        title: "After",
       },
     ],
   },

@@ -31,6 +31,7 @@ const meta = {
       options: Object.keys(variantMap),
       mapping: variantMap,
     },
+    className: { table: { disable: true } },
   },
 } satisfies Meta<typeof Reveal>;
 

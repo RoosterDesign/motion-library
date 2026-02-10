@@ -7,6 +7,11 @@ const meta = {
   tags: ["autodocs"],
   argTypes: {
     variant: { control: "select", options: ["standard", "slot"] },
+    children: { control: "text" },
+    className: { table: { disable: true } },
+  },
+  parameters: {
+    showReplay: false,
   },
 } satisfies Meta<typeof MotionButton>;
 

@@ -35,7 +35,7 @@ export function BlurReveal({
 
   if (reduced) {
     return (
-      <div className={clsx("relative aspect-[16/10] overflow-hidden", className)}>
+      <div className={clsx("relative aspect-16/10 overflow-hidden", className)}>
         <Image
           src={imageUrl}
           alt={alt}
@@ -50,7 +50,7 @@ export function BlurReveal({
   return (
     <div
       ref={ref}
-      className={clsx("relative aspect-[16/10] overflow-hidden", className)}
+      className={clsx("relative aspect-16/10 overflow-hidden", className)}
     >
       <motion.div className="absolute inset-0" style={{ filter }}>
         <Image

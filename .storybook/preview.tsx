@@ -80,15 +80,22 @@ const preview: Preview = {
     },
   },
   decorators: [
-    (Story, context) => (
-      <MotionProvider>
-        <div style={{ padding: "2rem" }}>
-          <AnimationReplay args={context.args}>
-            <Story />
-          </AnimationReplay>
-        </div>
-      </MotionProvider>
-    ),
+    (Story, context) => {
+      const showReplay = context.parameters.showReplay !== false;
+      return (
+        <MotionProvider>
+          <div style={{ padding: "2rem" }}>
+            {showReplay ? (
+              <AnimationReplay args={context.args}>
+                <Story />
+              </AnimationReplay>
+            ) : (
+              <Story />
+            )}
+          </div>
+        </MotionProvider>
+      );
+    },
   ],
 };
 

@@ -6,9 +6,9 @@ const meta = {
   component: ScaleReveal,
   tags: ["autodocs"],
   argTypes: {
-    initialScale: {
-      control: { type: "number", min: 0.1, max: 1, step: 0.05 },
-    },
+    initialScale: { table: { disable: true } },
+    alt: { table: { disable: true } },
+    className: { table: { disable: true } },
   },
 } satisfies Meta<typeof ScaleReveal>;
 
@@ -17,23 +17,6 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   args: {
-    imageUrl: "/demo/demo-1.jpg",
-    alt: "Scale reveal image",
-  },
-};
-
-export const DramaticScale: Story = {
-  args: {
-    imageUrl: "/demo/demo-2.jpg",
-    alt: "Dramatic scale from small",
-    initialScale: 0.3,
-  },
-};
-
-export const SubtleScale: Story = {
-  args: {
-    imageUrl: "/demo/demo-3.jpg",
-    alt: "Subtle scale reveal",
-    initialScale: 0.9,
+    imageUrl: "/demo/demo-1.jpg"
   },
 };
