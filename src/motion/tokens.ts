@@ -78,7 +78,7 @@ export const motionTokens = {
       // animation duration in seconds
       duration: 1.2,
       // cubic-bezier easing curve [x1, y1, x2, y2]
-      ease: [0.65, 0, 0.35, 1] as number[],
+      ease: [0.65, 0, 0.35, 1] as [number, number, number, number],
       // default mask shape — options: "circle" | "diamond"
       shape: "circle" as const,
       // initial peek size (% from centre — controls how much image is visible before animation)
@@ -116,7 +116,7 @@ export const motionTokens = {
       // animation duration in seconds for each slide transition
       duration: 0.5,
       // easing curve for the slide
-      ease: [0.65, 0, 0.35, 1] as number[],
+      ease: [0.65, 0, 0.35, 1] as [number, number, number, number],
     },
 
     // ─── Blur Reveal ────────────────────────────────────────────────────
@@ -127,7 +127,7 @@ export const motionTokens = {
       // animation duration in seconds (used when not scroll-driven)
       duration: 1.2,
       // easing curve
-      ease: [0.65, 0, 0.35, 1] as number[],
+      ease: [0.65, 0, 0.35, 1] as [number, number, number, number],
     },
 
     // ─── Scale Reveal ───────────────────────────────────────────────────
@@ -138,7 +138,7 @@ export const motionTokens = {
       // animation duration in seconds
       duration: 1.2,
       // easing curve
-      ease: [0.65, 0, 0.35, 1] as number[],
+      ease: [0.65, 0, 0.35, 1] as [number, number, number, number],
     },
 
     // ─── Expand Cards ───────────────────────────────────────────────────
@@ -151,6 +151,6 @@ export const motionTokens = {
       // transition duration in seconds
       duration: 0.5,
       // easing curve
-      ease: [0.65, 0, 0.35, 1] as number[],
+      ease: [0.65, 0, 0.35, 1] as [number, number, number, number],
     },
   } as const;
